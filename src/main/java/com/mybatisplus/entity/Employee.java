@@ -1,8 +1,6 @@
 package com.mybatisplus.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 import org.springframework.stereotype.Component;
@@ -34,11 +32,20 @@ public class Employee extends Model<Employee> {
     /**
      * 性别：0 女 1 男
      */
+    @TableField(fill = FieldFill.UPDATE)
     private Integer gender;
     /**
      * 年龄
+     * @TableField 注解的作用是字段填充
      */
+    @TableField(fill = FieldFill.INSERT)
     private Integer age;
+    /**
+     * 逻辑删除标识字段
+     * 使用@TableLogic注解标识逻辑字段
+     */
+    @TableLogic
+    private Integer d_id;
 
     /**
      * AR主键配置

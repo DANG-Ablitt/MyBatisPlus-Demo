@@ -8,4 +8,5 @@ import org.springframework.stereotype.Component;
 @Mapper
 @Component
 public interface EmployeeMapper extends BaseMapper<Employee> {
+
 }
