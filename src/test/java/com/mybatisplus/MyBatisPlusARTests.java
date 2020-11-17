@@ -80,14 +80,14 @@ public class MyBatisPlusARTests {
          * 如果注释掉Gender和Age
          * INSERT INTO tbi_employee ( last_name, email ) VALUES ( ?, ? )
          */
-        //Employee employee=new Employee();
-        //employee.setLastName("小李老师");
-        //employee.setEmail("xl@sina.com");
-        //employee.setGender(1);
-        //employee.setAge(65);
+        Employee employee=new Employee();
+        employee.setLastName("小李老师");
+        employee.setEmail("xl@sina.com");
+        employee.setGender(1);
+        employee.setAge(65);
         //添加：因为Employee类继承了Model类，所以可以直接调用Model类中的方法
-        //boolean i=employee.insert();
-        //System.out.println(i);
+        boolean i=employee.insert();
+        System.out.println(i);
     }
 
     /**

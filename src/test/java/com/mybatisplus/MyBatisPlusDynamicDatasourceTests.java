@@ -3,7 +3,10 @@ package com.mybatisplus;
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.mybatisplus.entity.Employee;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import javax.activation.DataSource;
 
 @SpringBootTest
 public class MyBatisPlusDynamicDatasourceTests {
@@ -15,7 +18,7 @@ public class MyBatisPlusDynamicDatasourceTests {
      * 从MySql数据库中读取tbi_employee数据
      */
     @Test
-    //@DS("MySql")
+    //@DS("mysql")
     public void testDynamicDatasourceMySql(){
         Employee employee1=new Employee().selectById(2);
         System.out.println(employee1);
@@ -25,7 +28,7 @@ public class MyBatisPlusDynamicDatasourceTests {
      */
 
     @Test
-    @DS("SqlServer")
+    //@DS("SqlServer")
     public void testDynamicDatasourceSqlServer(){
         Employee employee2=new Employee().selectById(3);
         System.out.println(employee2);

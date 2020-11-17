@@ -8,11 +8,12 @@ spring:
     #多数据源配置
     dynamic:
       #设置默认的数据源或者数据源组,默认值即为MySql
-      #primary: MySql
+      primary: mysql
       #设置严格模式,默认false不启动. 启动后在未匹配到指定数据源时候会抛出异常,不启动则使用默认数据源.
       strict: true
+      mp-enabled: true
       datasource:
-        MySql:
+        mysql:
           driver-class-name: com.mysql.jdbc.Driver
           url: jdbc:mysql://localhost:3306/mybatisplus-demo?serverTimezone=GMT
           username: root
@@ -22,15 +23,16 @@ spring:
           url: jdbc:sqlserver://localhost:1433;database=mybatisplus-demo
           username: sa
           password: 123456
+
 #日志配置
 logging:
   level:
     com.mybatisplus: debug
+
 #mybatis-plus配置
 mybatis-plus:
   global-config:
     db-config:
       logic-delete-value: 1 # 逻辑已删除值(默认为 1)
       logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
-
 
